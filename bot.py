@@ -14,11 +14,6 @@ TOKEN = '5069245007:AAHt8ocv6v-kupA6so4GEwLinRe9et6otos'
 
 def start(update, context):
     update.message.reply_text("Welcome!")
-
-
-
-
-
     update.message.reply_text("Initiating Services!") 
     update.message.reply_text('''By using the following commands
 You can get these things from me
@@ -26,6 +21,7 @@ You can get these things from me
 /first_unit -> First Unit Handwritten Notes
 /second_unit -> Second Unit Handwritten Notes
 /third_unit -> Third Unit Handwritten Notes
+/maths_notes -> Maths Online Class Notes
 ''')
 
 def first_unit(update, context):
@@ -120,6 +116,41 @@ def U3_HS3151(update, context):
     update.message.reply_text("Unit-3 Professional English")
     update.message.reply_text("https://drive.google.com/file/d/1-vjRKqmhsf2bXc6Fdqre9JDC8EaBvEon/view?usp=drivesdk")
 
+def maths_notes(update, context):
+    update.message.reply_text('''
+    Maths Online Class Notes:
+    
+    /eulers_theorem -> Euler's Theorem On Homogeneous Function
+    
+    /lagranges_problems -> Lagranges Method Of Undertermined Multipliers
+    
+    /min_max -> Min And Max Problems
+    
+    /taylors_series -> Problems On Taylor's Series
+    
+    /unit_3 -> Functions Of Several Variables - PPT
+    ''')
+    
+def eulers_theorem(update, context):
+    update.message.reply_text("Euler's Theorem")
+    update.message.reply_text("https://drive.google.com/file/d/1A0AAmTq4JDJDONKKQHhAPdXzfZfTu7Ga/view?usp=drivesdk")
+    
+def lagranges_problems(update, context):
+    update.message.reply_text("Langranges Problems")
+    update.message.reply_text("https://drive.google.com/file/d/19rEtx6Rehi0emdBXySlf7WKQ7_2xriZT/view?usp=drivesdk")
+    
+def min_max(update, context):
+    update.message.reply_text("Min and Max Problems")
+    update.message.reply_text("https://drive.google.com/file/d/19rkWEjCsnz9Hwc_5l0rU4Z3P-hD27S2N/view?usp=drivesdk")
+    
+def taylors_series(update, context):
+    update.message.reply_text("Taylor's Series Problems")
+    update.message.reply_text("https://drive.google.com/file/d/19r7P9XbhjRuInzGQhIcngQjz1AWV_sVd/view?usp=drivesdk")
+    
+def unit_3(update, context):
+    update.message.reply_text("Unit-3 Functions of Several Variables PPT")
+    update.message.reply_text("https://docs.google.com/presentation/d/1AE1sXOgW1dEwR2J59ubu4AZNVkeXYdJ4/edit?usp=drivesdk&ouid=101946115121402932191&rtpof=true&sd=true")
+
 def echo(update, context):
     """Echo the user message."""
     update.message.reply_text(update.message.text)
@@ -154,6 +185,13 @@ def main():
     disp.add_handler(CommandHandler("U3_MA3151", U3_MA3151))
     disp.add_handler(CommandHandler("U3_GE3151", U3_GE3151))
     disp.add_handler(CommandHandler("U3_HS3151", U3_HS3151))
+    
+    disp.add_handler(CommandHandler("maths_notes", maths_notes))
+    disp.add_handler(CommandHandler("eulers_theorem", eulers_theorem))
+    disp.add_handler(CommandHandler("lagranges_problems", lagranges_problems))
+    disp.add_handler(CommandHandler("min_max", min_max))
+    disp.add_handler(CommandHandler("taylors_series", taylors_series))
+    disp.add_handler(CommandHandler("unit_3", unit_3))
     
     disp.add_handler(MessageHandler(Filters.text, echo))
     disp.add_error_handler(error)
